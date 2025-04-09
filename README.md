@@ -6,7 +6,7 @@ This guide walks you through deploying two applications (`nginx` and `httpd`) on
 
 ## 🌐 Domain Setup
 
-- **Domain Name:** `praveens.online`
+- **Domain Name:** `praveens.online` (this is my domain name)
 - **Subdomains Used:**
   - `www.praveens.online` → Routes to `nginx`
   - `httpd.praveens.online` → Routes to `httpd`
@@ -40,7 +40,7 @@ kubectl get pods -n ingress-nginx
 
 kubectl get svc -n ingress-nginx
 
-    Note the EXTERNAL-IP of the ingress-nginx-controller service (type: LoadBalancer).
+    Note the EXTERNAL-IP of the ingress-nginx-controller service (type: LoadBalancer). [In my case i am using Other k8s cluster i am getting IP address in case aws you will get DNS Name at that add C_NAME RECORD IN godaddy
     You’ll use this IP in GoDaddy DNS settings.
 
 2️⃣ Configure A Records in GoDaddy DNS
@@ -48,7 +48,7 @@ Follow these steps:
 
     Go to https://godaddy.com and log in.
 
-    Under My Products, select your domain: praveens.online.
+    Under My Products, select your domain: praveens.online. (this is my domain name)
 
     Click DNS to manage records.
 
