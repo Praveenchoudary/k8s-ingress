@@ -10,14 +10,14 @@ spec:
   - host: "praveens.online"
     http:
       paths:
-      - path: /nginx/?(.*)
+      - path: /nginx
         pathType: Prefix
         backend:
           service:
             name: nginx
             port:
               number: 80
-      - path: /httpd/?(.*)
+      - path: /httpd
         pathType: Prefix
         backend:
           service:
