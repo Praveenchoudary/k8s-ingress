@@ -61,3 +61,35 @@ httpd	A	<Ingress EXTERNAL-IP>	600
     @ points to the root domain (www.praveens.online)
 
     httpd creates the subdomain (httpd.praveens.online)
+
+
+# SSL/TLS Setup in Kubernetes using cert-manager & Let's Encrypt
+
+This guide sets up HTTPS with cert-manager and Let's Encrypt for your Kubernetes application.
+
+---
+
+## 🌍 Domain Info
+
+- Domain: `www.praveens.online`
+- Email: `praveen@gmail.com`
+
+---
+
+## 📦 Tools Used
+
+- Kubernetes
+- cert-manager
+- NGINX Ingress Controller
+- Let's Encrypt (ACME)
+  
+---
+
+## 🛠️ Steps
+
+### 1. Install cert-manager
+
+```bash
+kubectl create namespace cert-manager
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
+kubectl get pods -n cert-manager
