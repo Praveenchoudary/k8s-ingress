@@ -92,4 +92,30 @@ This guide sets up HTTPS with cert-manager and Let's Encrypt for your Kubernetes
 ```bash
 kubectl create namespace cert-manager
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
-kubectl get pods -n cert-manager
+kubectl get pods -n cert-manager'
+
+
+### 2. Create a cluster issuer.
+
+# clusterissuer-prod.yaml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    email: praveen@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-prod-account-key
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+
+kubectl apply -f clusterissuer-prod.yaml
+
+### 2. Create a cluster issuer.
+
+Configure ingress
+
